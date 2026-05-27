@@ -1,0 +1,63 @@
+.carrinho-container{
+
+    display:flex;
+
+    justify-content:center;
+
+    padding:60px;
+
+}
+
+.carrinho-card{
+
+    background:white;
+
+    width:700px;
+
+    padding:40px;
+
+    border-radius:20px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,.2);
+
+}
+
+.item{
+
+    display:flex;
+
+    gap:20px;
+
+    align-items:center;
+
+    margin:30px 0;
+
+}
+
+.item img{
+
+    width:150px;
+
+    border-radius:10px;
+
+}
+
+.carrinho-card button{
+
+    width:100%;
+
+    padding:16px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:#2563eb;
+
+    color:white;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+}

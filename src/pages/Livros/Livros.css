@@ -1,0 +1,36 @@
+.livros-container{
+
+    padding:60px;
+
+}
+
+.livros-title{
+
+    text-align:center;
+
+    font-size:42px;
+
+    margin-bottom:40px;
+
+    color:#111827;
+
+}
+
+.livros-grid{
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+/* ANIMAÇÃO */
+
+.livros-grid .card{
+
+    animation:fadeIn .8s ease;
+
+}

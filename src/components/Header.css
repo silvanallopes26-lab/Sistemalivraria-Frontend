@@ -1,0 +1,29 @@
+.banner{
+
+  background:linear-gradient(
+    135deg,
+    #2563eb,
+    #38bdf8
+  );
+
+  color:white;
+
+  text-align:center;
+
+  padding:80px 20px;
+
+}
+
+.cards-container{
+
+  display:flex;
+
+  justify-content:center;
+
+  flex-wrap:wrap;
+
+  gap:30px;
+
+  padding:50px;
+
+}
