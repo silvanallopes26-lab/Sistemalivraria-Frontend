@@ -4,10 +4,10 @@ import {
   Route
 } from 'react-router-dom'
 
-import Home from '../pages/Home/Home'
-import Livros from '../pages/Livros/Livros'
-import Carrinho from '../pages/Carrinho/Carrinho'
-import Contato from '../pages/Contato/Contato'
+import Home from '../Home/Home'
+import Livros from '../Livros/Livros'
+import Carrinho from '../Carrinho/Carrinho'
+import Contato from '../Contato/Contato'
 
 function AppRoutes() {
   return (

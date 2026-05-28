@@ -1,49 +1,23 @@
-import Header from '../../components/Header/Header'
+import { Link } from 'react-router-dom'
+import './Header.css'
 
-import CardLivro from '../../components/CardLivro/CardLivro'
-
-function Home(){
+function Header(){
 
   return(
-
-    <>
-
-      <Header />
-
-      <section className="banner">
-
-        <h2>
-          Os Melhores Livros do Momento
-        </h2>
-
-      </section>
-
-      <section className="cards-container">
-
-        <CardLivro
-          titulo="Java Completo"
-          descricao="Aprenda Java"
-          imagem="https://picsum.photos/300/300"
-        />
-
-        <CardLivro
-          titulo="React Moderno"
-          descricao="Front-end moderno"
-          imagem="https://picsum.photos/300/301"
-        />
-
-        <CardLivro
-          titulo="Node.js"
-          descricao="Backend poderoso"
-          imagem="https://picsum.photos/300/302"
-        />
-
-      </section>
-
-    </>
-
+    <header className="site-header">
+      <div className="header-content">
+        <div className="brand">
+          <h1>Livraria Online</h1>
+        </div>
+        <nav className="header-nav">
+          <Link to="/">Home</Link>
+          <Link to="/livros">Livros</Link>
+          <Link to="/carrinho">Carrinho</Link>
+          <Link to="/contato">Contato</Link>
+        </nav>
+      </div>
+    </header>
   )
-
 }
 
-export default Home
+export default Header

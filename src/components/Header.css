@@ -1,29 +1,36 @@
-.banner{
-
-  background:linear-gradient(
-    135deg,
-    #2563eb,
-    #38bdf8
-  );
-
-  color:white;
-
-  text-align:center;
-
-  padding:80px 20px;
-
+﻿.site-header{
+    background:#111827;
+    color:#ffffff;
+    padding:18px 32px;
+    box-shadow:0 16px 40px rgba(15, 23, 42, 0.14);
 }
 
-.cards-container{
+.header-content{
+    max-width:1220px;
+    margin:0 auto;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:16px;
+}
 
-  display:flex;
+.brand h1{
+    font-size:24px;
+    letter-spacing:0.6px;
+}
 
-  justify-content:center;
+.header-nav{
+    display:flex;
+    gap:24px;
+    flex-wrap:wrap;
+}
 
-  flex-wrap:wrap;
+.header-nav a{
+    color:rgba(255, 255, 255, 0.86);
+    font-weight:700;
+    transition: color .2s ease;
+}
 
-  gap:30px;
-
-  padding:50px;
-
+.header-nav a:hover{
+    color:#7dd3fc;
 }

@@ -1,7 +1,7 @@
 import './Livros.css'
 
-import Header from '../../components/Header/Header'
-import Footer from '../../components/Footer/Footer'
+import Header from '../../components/Header'
+import Footer from '../../Footer/Footer'
 
 import CardLivro from '../../CardLivro/CardLivro'
 
@@ -22,27 +22,28 @@ function Livros(){
             <div className="livros-grid">
 
                 <CardLivro
-                    titulo="React Moderno"
-                    descricao="Aprenda React do zero"
-                    imagem="https://picsum.photos/300/301"
+                    titulo="Eu minha boca grande"
+                    descricao="Joyce Meyer"
+                    imagem="/imagens/livro1.jpg"
                 />
 
                 <CardLivro
-                    titulo="Java Completo"
-                    descricao="Back-end profissional"
-                    imagem="https://picsum.photos/300/302"
+                    titulo="Podologia"
+                    descricao="Técnicas e especializações podológicas"
+                    imagem="/imagens/livro2.jpg"
                 />
 
                 <CardLivro
-                    titulo="Node.js"
-                    descricao="API REST completa"
-                    imagem="https://picsum.photos/300/303"
+                    titulo="Reflexologia"
+                    descricao="Faça uma Reflexologia Podal para aliviar dores e tensões"
+                    imagem="/imagens/livro3.jpg"
+                
                 />
 
                 <CardLivro
-                    titulo="Banco de Dados"
-                    descricao="SQL e Modelagem"
-                    imagem="https://picsum.photos/300/304"
+                    titulo="Bíblia de Estudo Pentecostal"
+                    descricao="Sua busula para o estudo da palavra de Deus"
+                    imagem="/imagens/livro4.jpg"
                 />
 
             </div>

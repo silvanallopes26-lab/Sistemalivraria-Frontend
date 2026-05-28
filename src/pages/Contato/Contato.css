@@ -1,0 +1,66 @@
+.contato-container{
+    display:flex;
+    justify-content:center;
+    padding:80px 20px;
+    background:#e2ecf9;
+    min-height:calc(100vh - 170px);
+}
+
+.formulario{
+    width:min(640px,100%);
+    background:white;
+    padding:42px;
+    border-radius:24px;
+    box-shadow:0 20px 40px rgba(15,23,42,.12);
+}
+
+.formulario h1{
+    font-size:34px;
+    margin-bottom:24px;
+    color:#111827;
+}
+
+.formulario input,
+.formulario textarea{
+    width:100%;
+    border:1px solid #d1d5db;
+    border-radius:12px;
+    padding:16px 18px;
+    margin-bottom:18px;
+    font-size:16px;
+    color:#1f2937;
+    background:#f8fafc;
+}
+
+.formulario textarea{
+    min-height:160px;
+    resize:vertical;
+}
+
+.formulario button{
+    width:100%;
+    padding:16px 20px;
+    border:none;
+    border-radius:12px;
+    background:#2563eb;
+    color:white;
+    font-weight:700;
+    font-size:16px;
+    cursor:pointer;
+    transition:transform .2s ease, background .2s ease;
+}
+
+.formulario button:hover{
+    transform:translateY(-1px);
+    background:#1d4ed8;
+}
+
+@media (max-width: 760px) {
+    .contato-container{
+        padding:40px 16px;
+    }
+
+    .formulario{
+        padding:28px;
+    }
+}

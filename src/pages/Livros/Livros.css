@@ -1,36 +1,32 @@
 .livros-container{
-
-    padding:60px;
-
+    max-width: 1220px;
+    margin: 0 auto;
+    padding: 80px 32px;
 }
 
 .livros-title{
-
-    text-align:center;
-
-    font-size:42px;
-
-    margin-bottom:40px;
-
-    color:#111827;
-
+    text-align: center;
+    font-size: clamp(2.2rem, 3vw, 3.4rem);
+    margin: 0 auto 40px;
+    color: #111827;
+    max-width: 760px;
 }
 
 .livros-grid{
-
     display:grid;
-
-    grid-template-columns:
-    repeat(auto-fit,minmax(300px,1fr));
-
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap:30px;
-
+    align-items: stretch;
 }
 
 /* ANIMAÇÃO */
 
 .livros-grid .card{
-
     animation:fadeIn .8s ease;
+}
 
+@media (max-width: 760px) {
+    .livros-container{
+        padding: 40px 16px;
+    }
 }
