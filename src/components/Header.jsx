@@ -12,7 +12,10 @@ function Header(){
         <nav className="header-nav">
           <Link to="/">Home</Link>
           <Link to="/livros">Livros</Link>
+          <Link to="/lancamentos">Lançamentos</Link>
+          <Link to="/sobre">Sobre</Link>
           <Link to="/carrinho">Carrinho</Link>
+          <Link to="/compras">Compras</Link>
           <Link to="/contato">Contato</Link>
         </nav>
       </div>

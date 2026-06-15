@@ -42,6 +42,41 @@
 
 }
 
+.item-price {
+    font-weight: 700;
+    margin-top: 8px;
+    color: #111827;
+}
+
+.remover-button {
+    margin-top: 10px;
+    padding: 10px 16px;
+    border: 1px solid #d1d5db;
+    border-radius: 10px;
+    background: #f8fafc;
+    color: #111827;
+    cursor: pointer;
+}
+
+.remover-button:hover {
+    background: #e2e8f0;
+}
+
+.carrinho-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+    gap: 16px;
+}
+
+.carrinho-empty {
+    padding: 24px 0;
+    color: #475569;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
 .carrinho-card button{
 
     width:100%;

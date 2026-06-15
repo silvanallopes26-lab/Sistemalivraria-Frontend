@@ -1,59 +1,92 @@
-import './Carrinho.css'
+﻿import './Carrinho.css'
 
+import { useNavigate } from 'react-router-dom'
 import Header from '../../components/Header'
 import Footer from '../../Footer/Footer'
+import { useCart } from '../../context/CartContext'
 
-function Carrinho(){
+function Carrinho() {
+  const {
+    cart,
+    removerProduto,
+    finalizarCompra,
+    alternarSelecao
+  } = useCart()
+  const navigate = useNavigate()
 
-    return(
+  const total = cart.reduce(
+    (acc, item) => acc + (item.preco?.valor || 0),
+    0
+  )
 
-        <>
+  const handleFinalizar = () => {
+    if (finalizarCompra()) {
+      navigate('/compras')
+    }
+  }
 
-        <Header />
+  return (
+    <>
+      <Header />
 
-        <section className="carrinho-container">
+      <section className="carrinho-container">
+        <div className="carrinho-card">
+          <h1>🛒 Carrinho</h1>
 
-            <div className="carrinho-card">
+          {cart.length === 0 ? (
+            <p className="carrinho-empty">Seu carrinho está vazio.</p>
+          ) : (
+            <>
+              {cart.map((item) => (
+                <div className="item" key={item.cartId}>
+                  <input
+                    type="checkbox"
+                    checked={item.selecionado}
+                    onChange={() =>
+                      alternarSelecao(item.cartId)
+                    }
+                  />
+                  <img
+                    src={`http://localhost:8080${item.imagem}`}
+                    alt={item.titulo?.nome}
+                  />
 
-                <h1>
-                    🛒 Carrinho
-                </h1>
+                  <div>
+                    <h2>{item.titulo?.nome}</h2>
 
-                <div className="item">
+                    <p>
+                      {item.autor?.nome || item.descricao}
+                    </p>
 
-                    <img
-                        src="/imagens/livro1.jpg"
-                        alt="Livro"
-                    />
+                    <p className="item-price">
+                      R$ {(item.preco?.valor ?? 0).toFixed(2)}
+                    </p>
 
-                    <div>
-
-                        <h2>
-                            React Moderno
-                        </h2>
-
-                        <p>
-                            R$ 79,90
-                        </p>
-
-                    </div>
-
+                    <button
+                      type="button"
+                      className="remover-button"
+                      onClick={() => removerProduto(item.cartId)}
+                    >
+                      Remover
+                    </button>
+                  </div>
                 </div>
+              ))}
 
-                <button>
-                    Finalizar Compra
+              <div className="carrinho-summary">
+                <strong>Total: R$ {total.toFixed(2)}</strong>
+                <button type="button" onClick={handleFinalizar}>
+                  Finalizar Compra
                 </button>
+              </div>
+            </>
+          )}
+        </div>
+      </section>
 
-            </div>
-
-        </section>
-
-        <Footer />
-
-        </>
-
-    )
-
+      <Footer />
+    </>
+  )
 }
 
 export default Carrinho

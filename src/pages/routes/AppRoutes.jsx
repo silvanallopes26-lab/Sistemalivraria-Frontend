@@ -6,13 +6,18 @@ import {
 
 import Home from '../Home/Home'
 import Livros from '../Livros/Livros'
+import Lancamentos from '../Lancamentos/Lancamentos'
+import Sobre from '../Sobre/Sobre'
 import Carrinho from '../Carrinho/Carrinho'
+import Compras from '../Compras/Compras'
 import Contato from '../Contato/Contato'
+
+import CadastroLivro from '../CadastroLivro/CadastroLivro'
+import EditarLivro from '../EditarLivro/EditarLivro'
 
 function AppRoutes() {
   return (
     <BrowserRouter>
-
       <Routes>
 
         <Route
@@ -26,8 +31,33 @@ function AppRoutes() {
         />
 
         <Route
+          path="/cadastro-livro"
+          element={<CadastroLivro />}
+        />
+
+        <Route
+          path="/editar-livro/:id"
+          element={<EditarLivro />}
+        />
+
+        <Route
+          path="/lancamentos"
+          element={<Lancamentos />}
+        />
+
+        <Route
+          path="/sobre"
+          element={<Sobre />}
+        />
+
+        <Route
           path="/carrinho"
           element={<Carrinho />}
+        />
+
+        <Route
+          path="/compras"
+          element={<Compras />}
         />
 
         <Route
@@ -36,7 +66,6 @@ function AppRoutes() {
         />
 
       </Routes>
-
     </BrowserRouter>
   )
 }

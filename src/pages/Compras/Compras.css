@@ -1,0 +1,168 @@
+.compras-page {
+  min-height: calc(100vh - 180px);
+  background: #f6f8ff;
+  padding: 40px 20px;
+}
+
+.compras-content {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.compras-content h1 {
+  margin-bottom: 24px;
+  font-size: 2.4rem;
+  color: #1f2937;
+}
+
+.compras-grid {
+  display: grid;
+  gap: 24px;
+}
+
+@media (max-width: 900px) {
+  .compras-grid {
+    gap: 18px;
+  }
+}
+
+.compras-empty {
+  background: white;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  text-align: center;
+}
+
+.compra-card {
+  background: white;
+  border-radius: 20px;
+  padding: 24px;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+  margin-bottom: 24px;
+}
+
+.compra-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.compra-items {
+  display: grid;
+  gap: 16px;
+}
+
+.compra-item-card {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 18px;
+  align-items: center;
+  background: #f8fafc;
+  padding: 18px;
+  border-radius: 18px;
+  border: 1px solid #e5e7eb;
+}
+
+.compra-item-card img {
+  width: 100%;
+  min-width: 100px;
+  height: 100px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.compra-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.compra-item-info h3 {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #0f172a;
+}
+
+.compra-item-info p {
+  margin: 0;
+  color: #475569;
+  line-height: 1.5;
+}
+
+.compra-item-info .item-price {
+  margin-top: 8px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.item-price {
+  margin-top: 8px;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.compra-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+  font-size: 1.05rem;
+}
+
+
+.compra-total {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-top: 20px;
+  padding-top: 15px;
+
+  border-top: 1px solid #ddd;
+
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.item-price {
+  color: #16a34a;
+  font-weight: bold;
+}
+
+.compra-card {
+  transition: 0.3s;
+}
+
+.compra-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.delete-order {
+  background: #dc2626;
+  color: white;
+
+  border: none;
+  padding: 10px 16px;
+
+  border-radius: 8px;
+
+  cursor: pointer;
+}
+
+.delete-order:hover {
+  background: #991b1b;
+}
+
+.item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+
+  margin-right: 15px;
+}

@@ -1,0 +1,57 @@
+.sobre-page {
+  min-height: calc(100vh - 180px);
+  background: #f3f4ff;
+  padding: 40px 20px 60px;
+}
+
+.sobre-hero {
+  max-width: 980px;
+  margin: 0 auto 36px;
+  padding: 42px 36px;
+  border-radius: 28px;
+  background: white;
+  box-shadow: 0 28px 80px rgba(15, 23, 42, 0.08);
+}
+
+.sobre-hero h1 {
+  font-size: clamp(2.6rem, 3vw, 3.4rem);
+  margin-bottom: 16px;
+  color: #0f172a;
+}
+
+.sobre-hero p {
+  color: #475569;
+  line-height: 1.8;
+}
+
+.sobre-cards {
+  max-width: 1220px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(260px, 1fr));
+  gap: 24px;
+}
+
+.sobre-card {
+  background: white;
+  border-radius: 24px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  padding: 28px;
+}
+
+.sobre-card h2 {
+  margin-bottom: 16px;
+  color: #111827;
+}
+
+.sobre-card p {
+  color: #475569;
+  line-height: 1.75;
+}
+
+@media (max-width: 980px) {
+  .sobre-cards {
+    grid-template-columns: 1fr;
+  }
+}

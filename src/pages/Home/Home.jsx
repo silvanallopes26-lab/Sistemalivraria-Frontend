@@ -1,37 +1,98 @@
-import './Home.css'
+﻿import './Home.css'
 
+import { Link } from 'react-router-dom'
 import Header from '../../components/Header'
 import Footer from '../../Footer/Footer'
 
-import CardLivro from '../../CardLivro/CardLivro'
+function Home() {
+  return (
+    <>
+      <Header />
 
-function Home(){
+      <section className="banner">
+        <div className="particles"></div>
 
-    return(
+        <div className="banner-content">
+          <span className="banner-label">
+            🌟 Sua próxima aventura começa aqui
+          </span>
 
-        <>
-        <Header />
+          <h1 className="banner-title">
+            ❦ Biblioteca do Conhecimento ❦
+          </h1>
 
-        <section className="banner">
-            <div className="banner-content">
-                <span className="banner-label">Tema atualizado</span>
-                <h1>📚 Livraria Online</h1>
-                <p>Descubra livros inspiradores para desenvolvimento, tecnologia e criatividade.</p>
-                <button className="banner-button">Ver lançamentos</button>
-            </div>
-            <div className="banner-image">
-                <img
-                    src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=700&q=80"
-                    alt="Estante de livros coloridos"
-                />
+          <p className="banner-text">
+            Tecnologia, literatura e desenvolvimento
+            pessoal em um só lugar.
+          </p>
 
-                </div>
+          <div className="banner-actions">
+            <Link
+              to="/lancamentos"
+              className="banner-button"
+            >
+              Lançamentos
+            </Link>
 
-        </section>
-      </>
+            <Link
+              to="/cadastro-livro"
+              className="banner-button"
+            >
+              Cadastrar Livro
+            </Link>
 
-    )
+            <Link
+              to="/sobre"
+              className="banner-secondary"
+            >
+              Sobre nós
+            </Link>
+          </div>
+        </div>
 
+        <div className="banner-image">
+          <img
+            src="/imagens/livrohome6.jpg"
+            alt="Livraria"
+            className="hero-image"
+            onError={(e) => {
+              console.log(
+                'Imagem não encontrada:',
+                e.target.src
+              )
+            }}
+          />
+        </div>
+      </section>
+
+      <section className="home-highlight">
+        <div className="highlight-card fade-in">
+          <h2>
+            Por que escolher a Livraria Online?
+          </h2>
+
+          <ul>
+            <li>
+              Curadoria de livros para tecnologia,
+              liderança e desenvolvimento pessoal.
+            </li>
+
+            <li>
+              Entrega rápida e fácil acompanhamento
+              do pedido.
+            </li>
+
+            <li>
+              Conteúdo novo a cada semana em nossa
+              página de Lançamentos.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <Footer />
+    </>
+  )
 }
 
 export default Home
