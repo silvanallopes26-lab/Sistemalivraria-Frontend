@@ -13,7 +13,7 @@ function Contato() {
     setStatus('enviando')
 
     emailjs.sendForm(
-      'service_b47876h',
+      'service_c26s8rm',
       'sf825y2',
       form.current,
       'lNaRH6qqjZy_GKIJJ'
