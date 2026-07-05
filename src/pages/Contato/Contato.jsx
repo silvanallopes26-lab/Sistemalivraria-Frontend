@@ -14,7 +14,7 @@ function Contato() {
 
     emailjs.sendForm(
       'service_c26s8rm',
-      'sf825y2',
+      'template_aqhuyhg',
       form.current,
       'lNaRH6qqjZy_GKIJJ'
     ).then(() => {
