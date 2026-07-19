@@ -1,26 +1,29 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import './Contato.css'
 import Header from '../../components/Header'
 import Footer from '../../Footer/Footer'
 
 function Contato() {
-  const form = useRef()
+  const [nome, setNome] = useState('')
+  const [email, setEmail] = useState('')
+  const [assunto, setAssunto] = useState('')
+  const [mensagem, setMensagem] = useState('')
   const [status, setStatus] = useState('')
 
   const enviarEmail = (e) => {
     e.preventDefault()
     setStatus('enviando')
-
-    emailjs.sendForm(
+    emailjs.send(
       'service_c26s8rm',
       'template_aqhuyhg',
-      form.current,
-      'lNaRH6qqjZy_GKIJJ'
+      { from_name: nome, from_email: email, subject: assunto, message: mensagem },
+      'INaRH6qqjZy_GKIJJ'
     ).then(() => {
       setStatus('sucesso')
-      form.current.reset()
-    }).catch(() => {
+      setNome(''); setEmail(''); setAssunto(''); setMensagem('')
+    }).catch((err) => {
+      console.error('EmailJS erro:', err)
       setStatus('erro')
     })
   }
@@ -40,21 +43,28 @@ function Contato() {
               <div><strong>Atendimento</strong><p>Segunda a sexta, 9h às 18h</p></div>
             </div>
           </div>
-
-          <form ref={form} className="formulario" onSubmit={enviarEmail}>
+          <form className="formulario" onSubmit={enviarEmail}>
             <div className="form-header">
               <h2>Envie sua mensagem</h2>
               <p>Preencha os campos abaixo e retornaremos o mais breve possível.</p>
             </div>
-            <label>Nome completo<input type="text" name="name" placeholder="Seu nome" required /></label>
-            <label>E-mail<input type="email" name="email" placeholder="Seu email" required /></label>
-            <label>Assunto<input type="text" name="title" placeholder="Assunto da mensagem" required /></label>
-            <label>Mensagem<textarea name="message" placeholder="Digite sua mensagem" required></textarea></label>
+            <label>Nome completo
+              <input type="text" placeholder="Seu nome" required value={nome} onChange={(e) => setNome(e.target.value)} />
+            </label>
+            <label>E-mail
+              <input type="email" placeholder="Seu email" required value={email} onChange={(e) => setEmail(e.target.value)} />
+            </label>
+            <label>Assunto
+              <input type="text" placeholder="Assunto da mensagem" required value={assunto} onChange={(e) => setAssunto(e.target.value)} />
+            </label>
+            <label>Mensagem
+              <textarea placeholder="Digite sua mensagem" required value={mensagem} onChange={(e) => setMensagem(e.target.value)} />
+            </label>
             <button type="submit" disabled={status === 'enviando'}>
               {status === 'enviando' ? 'Enviando...' : 'Enviar mensagem'}
             </button>
-            {status === 'sucesso' && <p style={{color: 'green'}}>Mensagem enviada com sucesso!</p>}
-            {status === 'erro' && <p style={{color: 'red'}}>Erro ao enviar. Tente novamente.</p>}
+            {status === 'sucesso' && <p style={{color:'green'}}>Mensagem enviada com sucesso!</p>}
+            {status === 'erro' && <p style={{color:'red'}}>Erro ao enviar. Tente novamente.</p>}
           </form>
         </div>
       </section>
